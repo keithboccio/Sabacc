@@ -40,10 +40,10 @@ public class Deck extends Stack
 		s.add(new Card(-10, 'n'));//The Star (Classic)
 	}
 	
-	public Deck randomize(Deck d)
+	public Deck randomize()
 	{
 		
-		return d;
+		return s;
 	}
 	public Deck getDeck()
 	{

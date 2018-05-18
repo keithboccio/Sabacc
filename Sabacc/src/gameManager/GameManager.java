@@ -5,6 +5,8 @@ import gameData.*;
 public class GameManager 
 {
 	int numPlayers;
+	ArrayList<Player> players = new ArrayList(0);
+	Deck deck = new Deck();
 	
 	public GameManager(int i)
 	{
@@ -12,11 +14,23 @@ public class GameManager
 	}
 	public void Run()
 	{
-		ArrayList players = new ArrayList(numPlayers);
+
 		
 	}
-
-	
-	
+	public void Setup()
+	{
+		for (int i = 1; i<=numPlayers; i++)
+		{
+			players.add(new Player(i));
+		}
+		deck.randomize();
+		for (int i = 1; i <=2; i++)
+		{
+			for (int j = 0; j <numPlayers; j++)
+			{
+				players.get(j).getPlayerHand().addToHand(deck.pop());
+			}
+		}
+	}
 
 }

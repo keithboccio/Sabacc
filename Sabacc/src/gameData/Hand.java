@@ -8,7 +8,7 @@ public class Hand extends ArrayList
 	
 	public Hand()
 	{
-	value = 0;	
+		value = 0;	
 	}
 	
 	public int getValue()
@@ -18,6 +18,11 @@ public class Hand extends ArrayList
 	public void setValue(int i)
 	{
 		value = i;
+	}
+	public void addToHand(Card c)
+	{
+		h.add(c);
+		value += c.getValue();
 	}
 
 }
