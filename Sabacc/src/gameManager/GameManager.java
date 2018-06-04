@@ -28,7 +28,7 @@ public class GameManager
 		Setup();//setup the hand
 		while (round <=4)
 		{
-			for (int a = 1; a<=numPlayers; a++)//betting
+			for (int a = 0; a<=numPlayers-1; a++)//betting
 			{
 				if (bet == false)
 				{
@@ -53,14 +53,18 @@ public class GameManager
 						{
 							case ("call"):	players.get(a).setPlayerCredits(players.get(a).getPlayerCredits()-inputInt);
 											mainPot += currentBet;
+											break;
 							case ("raise"):	System.out.println("Current bet: " + currentBet + " Raise amount: ");
 											inputInt = scanner.nextInt();
 											currentBet += inputInt;
 											mainPot += currentBet;
 											players.get(a).setPlayerCredits(players.get(a).getPlayerCredits()-inputInt);
+											break;
 							case ("fold"):	players.get(a).setPlayerFold(true);
+											break;
 							default: 		System.out.println("Please enter call or raise or fold: ");
 											a--;
+											break;
 											
 						}
 						
@@ -73,7 +77,7 @@ public class GameManager
 
 			}
 			
-			for (int i = 1; i<=numPlayers; i++)//Draw or stand
+			for (int i = 1; i<=numPlayers-1; i++)//Draw or stand
 			{
 				System.out.println("Draw or Stand?: ");
 				inputString = scanner.next();
@@ -94,7 +98,7 @@ public class GameManager
 	//Gets the deck and players read for the hand being played
 	public void Setup()
 	{
-		for (int i = 1; i<=numPlayers; i++) //Fill the Arraylist of players
+		for (int i = 0; i<=numPlayers-1; i++) //Fill the Arraylist of players
 		{
 			players.add(new Player(i));
 		}
