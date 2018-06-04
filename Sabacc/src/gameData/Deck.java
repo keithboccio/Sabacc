@@ -1,9 +1,9 @@
 package gameData;
 import java.util.*;
-public class Deck extends Stack 
+public class Deck extends Stack<Card> 
 {
 	Card c = new Card(1,'n');
-	Deck s = new Deck();
+	Stack<Card> s = new Stack<Card>();
 	public Deck()
 	{
 		for (int x = 1; x <= 15; x++)
@@ -40,7 +40,7 @@ public class Deck extends Stack
 		s.add(new Card(-10, 'n'));//The Star (Classic)
 	}
 	
-	public Deck randomize()
+	/*public Deck randomize()
 	{
 		
 		return s;
@@ -48,7 +48,7 @@ public class Deck extends Stack
 	public Deck getDeck()
 	{
 		return s;
-	}
+	}*/
 }
 
 /*

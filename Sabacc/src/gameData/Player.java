@@ -4,12 +4,16 @@ import java.util.*;
 public class Player 
 {
 	int playerNumber;
+	int credits;
 	Hand h;
+	boolean fold;
 	
 	public Player(int i)
 	{
 		playerNumber = i;
+		credits = 500;
 		h = new Hand();
+		fold = false;
 	}
 	
 	public int getPlayerNumber()
@@ -23,5 +27,21 @@ public class Player
 	public Hand getPlayerHand()
 	{
 		return h;
+	}
+	public void setPlayerCredits(int i)
+	{
+		credits = i;
+	}
+	public int getPlayerCredits()
+	{
+		return credits;
+	}
+	public void setPlayerFold(boolean b)
+	{
+		fold = b;
+	}
+	public boolean getPlayerFold()
+	{
+		return fold;
 	}
 }

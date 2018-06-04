@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Hand extends ArrayList
 {
-	Hand h = new Hand();
+	ArrayList h = new ArrayList();
 	int value;
 	
 	public Hand()
