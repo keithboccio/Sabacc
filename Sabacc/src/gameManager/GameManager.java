@@ -4,25 +4,28 @@ import gameData.*;
 
 public class GameManager 
 {
-	Scanner scanner = new Scanner(System.in);
-	int numPlayers;
-	ArrayList<Player> players = new ArrayList(0);
-	Deck deck = new Deck();
-	int mainPot = 0;
-	int sabaccPot = 0;
-	int currentBet;
-	int round = 0;
-	String inputString;
-	int inputInt;
-	boolean bet = false;
+	Scanner scanner = new Scanner(System.in); //For input from players
+	int numPlayers;	//Number of players in the game
+	ArrayList<Player> players = new ArrayList(0); //Arraylist of players
+	Deck deck = new Deck(); //the deck being used
+	int mainPot = 0; //Main pot for the round
+	int sabaccPot = 0; //Sabacc pot for the overall game
+	int currentBet; //Current bet for the round
+	int round = 0; //round counter
+	String inputString; //Read in string
+	int inputInt; //Read in int
+	boolean bet = false; //track if current round has a bet
 	
+	//Constructor
 	public GameManager(int i)
 	{
 		numPlayers = i;
 	}
+	
+	//Runs the bulk the of game
 	public void Run()
 	{
-		Setup();
+		Setup();//setup the hand
 		while (round <=4)
 		{
 			for (int a = 1; a<=numPlayers; a++)//betting
@@ -76,9 +79,9 @@ public class GameManager
 				inputString = scanner.next();
 				switch (inputString)
 				{
-					case ("draw"): 		players.get(i).getPlayerHand().addToHand((Card)deck.pop());
+					case ("draw"): 		players.get(i).getPlayerHand().addToHand(deck.draw());
 					case ("stand"): 	break;
-					default: 			System.out.println("Please enter draw or stand:");
+					default: 			System.out.println("Please enter draw or stand");
 										i--;//don't go to next player
 										break;
 				}
@@ -87,18 +90,20 @@ public class GameManager
 		}
 		
 	}
+	
+	//Gets the deck and players read for the hand being played
 	public void Setup()
 	{
-		for (int i = 1; i<=numPlayers; i++)
+		for (int i = 1; i<=numPlayers; i++) //Fill the Arraylist of players
 		{
 			players.add(new Player(i));
 		}
 		//deck.randomize();
-		for (int i = 1; i <=2; i++)
+		for (int i = 1; i <=2; i++) //give they players their starting hands of 2 cards each
 		{
 			for (int j = 0; j <numPlayers; j++)
 			{
-				players.get(j).getPlayerHand().addToHand((Card)deck.pop());
+				players.get(j).getPlayerHand().addToHand(deck.draw());
 			}
 		}
 		round++;//set round to 1(first betting)

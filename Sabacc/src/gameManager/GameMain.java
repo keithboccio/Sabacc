@@ -9,7 +9,7 @@ public class GameMain
 	{
 		
 		int numberOfPlayers;
-		System.out.println("Please enter the number of players (2-8: ");
+		System.out.println("Please enter the number of players (2-8): ");
 		numberOfPlayers = scanner.nextInt();
 		
 		GameManager manager = new GameManager(numberOfPlayers);

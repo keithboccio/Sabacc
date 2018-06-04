@@ -39,6 +39,11 @@ public class Deck extends Stack<Card>
 		s.add(new Card(-10, 'n'));//The Star (classic)
 		s.add(new Card(-10, 'n'));//The Star (Classic)
 	}
+	public Card draw()
+	{
+		c = s.pop();
+		return c;
+	}
 	
 	/*public Deck randomize()
 	{
