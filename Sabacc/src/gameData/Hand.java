@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Hand extends ArrayList
 {
-	ArrayList h = new ArrayList();
+	ArrayList<Card> h = new ArrayList();
 	int value;
 	
 	public Hand()
@@ -23,6 +23,15 @@ public class Hand extends ArrayList
 	{
 		h.add(c);
 		value += c.getValue();
+	}
+	public void printHand()
+	{
+		for (int i = 0; i < h.size(); i++)
+		{
+			System.out.print(h.get(i).getValue());
+			System.out.print(h.get(i).getSuit() + " ");
+		}
+		System.out.println("Total: " + value);
 	}
 
 }
