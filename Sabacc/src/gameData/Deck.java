@@ -38,6 +38,7 @@ public class Deck extends Stack<Card>
 		s.add(new Card(-13, 'n'));//Demise
 		s.add(new Card(-10, 'n'));//The Star (classic)
 		s.add(new Card(-10, 'n'));//The Star (Classic)
+		randomize();
 	}
 	public Card draw()
 	{
@@ -45,11 +46,34 @@ public class Deck extends Stack<Card>
 		return c;
 	}
 	
-	/*public Deck randomize()
+	public void randomize()
 	{
-		
-		return s;
+		int r1;
+		int r2;
+		Card temp;
+		ArrayList<Card> tempList = new ArrayList<Card>();
+		Random generator = new Random(System.currentTimeMillis());
+		//generator.setSeed(System.currentTimeMillis());
+		for (int i = 0; i < s.size(); i++)
+		{
+			tempList.add(s.pop());
+		}
+		for (int i = 0; i < 1000; i++)
+		{
+			r1 = generator.nextInt(s.size());
+			r2 = generator.nextInt(s.size());
+			temp = tempList.get(r1);
+			tempList.remove(r1);
+			tempList.add(r2, temp);
+		}
+		s.clear();
+		while (!tempList.isEmpty())
+		{
+			s.push(tempList.get(0));
+			tempList.remove(0);
+		}
 	}
+	/*
 	public Deck getDeck()
 	{
 		return s;

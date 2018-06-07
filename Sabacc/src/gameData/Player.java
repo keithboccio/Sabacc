@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Player 
 {
-	int playerNumber;
+	int playerNumber; 
 	int credits;
 	Hand h;
 	boolean fold;
@@ -27,6 +27,10 @@ public class Player
 	public Hand getPlayerHand()
 	{
 		return h;
+	}
+	public void discardPlayerHand()
+	{
+		h = new Hand();
 	}
 	public void setPlayerCredits(int i)
 	{

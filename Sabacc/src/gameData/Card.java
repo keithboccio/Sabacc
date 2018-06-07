@@ -4,7 +4,7 @@ public class Card
 {
 	int value;
 	char suit;
-	public Card(int v, char s)
+	public Card(int v, char s) 
 	{
 		value = v;
 		suit = s;

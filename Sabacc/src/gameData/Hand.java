@@ -24,7 +24,7 @@ public class Hand extends ArrayList
 		h.add(c);
 		value += c.getValue();
 	}
-	public void printHand()
+	public void printHand() 
 	{
 		for (int i = 0; i < h.size(); i++)
 		{
